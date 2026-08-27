@@ -1,4 +1,4 @@
-import project1 from "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787493915/Kairos_Prod.mp4";
+const project1 = "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787495534/ICC_2026_Acquiantance_Party_compressed.mp4";
 import project2 from "@/assets/event-4.jpg";
 import project3 from "@/assets/shell-1.jpg";
 import project4 from "@/assets/web-1.jpeg";
