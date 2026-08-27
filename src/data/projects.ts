@@ -49,28 +49,28 @@ export const projects: Project[] = [
     {
       title: "Kairos Prod.",
       description: "Kairos Prod. is my personal production brand where I serve as the owner and creative lead. Through this platform, I have produced social media content and visual campaigns while gaining valuable experience in video production, branding, and digital storytelling.",
-      urls: ["/videos/Kairos Prod.mp4", "/videos/Mason SDE.mp4", "/videos/FINAL SDE.mp4", "/videos/IBPVIDEOHIGHLIGHT.mp4"],
+      urls: ["/videos/Kairos Prod.mp4", "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787495963/Mason_SDE_compressed.mp4", "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787495256/FINAL_SDE_compressed.mp4", "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787496231/IBPVIDEOHIGHLIGHT_compressed.mp4"],
     },
     {
       title: "Alex&B Intern",
       description: "During my internship at Alex&B, I gained hands-on experience in branding and visual communication while collaborating on projects for companies in Iligan such as Ambiente, Shell, and IIT. The experience strengthened my understanding of professional design workflows and brand development.",
-      urls: ["/videos/CROWN REVEAL.mp4"],
+      urls: ["https://res.cloudinary.com/jdxmsfk2/video/upload/v1787496475/CROWN_REVEAL_compressed.mp4"],
     },
     {
       title: "Event Highlight Reel",
       description: "A fast-paced highlight video capturing the best moments of a live event with dynamic transitions and music sync.",
-      urls: ["/videos/ICC 2026 Acquiantance Party.mp4"],
+      urls: ["https://res.cloudinary.com/jdxmsfk2/video/upload/v1787495534/ICC_2026_Acquiantance_Party_compressed.mp4"],
     },
    
      {
       title: "Promotional Videos",
       description: "A corporate promotional video created in collaboration with Republic Cement and other leading companies in Iligan City, showcasing brand identity, operations, and corporate storytelling through clean and engaging visuals.",
-      urls: ["/videos/RCMI_AVP_2026.mp4", "/videos/PMIEA 2025.mp4"],
+      urls: ["https://res.cloudinary.com/jdxmsfk2/video/upload/v1787495739/RCMI_AVP_2026_compressed.mp4", "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787494597/PMIEA_2025_compressed.mp4"],
     },
      {
       title: "Student Publication Videos",
       description: "Stories crafted by Silahis, where I played a key role in video shoots, editing, graphics, and overall production management.",
-      urls: ["/videos/Silahis_1.mp4", "/videos/Silahis_2.mp4", "/videos/Silahis_3.mp4"],
+      urls: ["https://res.cloudinary.com/jdxmsfk2/video/upload/v1787493922/Silahis_1.mp4", "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787493927/Silahis_2.mp4", "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787493921/Silahis_3.mp4"],
 
     },
 
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     {
       title: "Student Council Videos",
       description: "Student Council productions brought to life through direction, cinematography, and editing—spanning montages, short films, and music videos.",
-      urls: ["/videos/CCS_2.mp4", "/videos/CCS_3.mp4" ],
+      urls: ["https://res.cloudinary.com/jdxmsfk2/video/upload/v1787493916/CCS_2.mp4", "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787493927/CCS_3.mp4" ],
     },
    
 
