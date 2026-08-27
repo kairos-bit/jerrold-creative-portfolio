@@ -1,4 +1,4 @@
-import project1 from "/videos/ICC 2026 Acquiantance Party.mp4";
+import project1 from "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787493915/Kairos_Prod.mp4";
 import project2 from "@/assets/event-4.jpg";
 import project3 from "@/assets/shell-1.jpg";
 import project4 from "@/assets/web-1.jpeg";
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     {
       title: "Kairos Prod.",
       description: "Kairos Prod. is my personal production brand where I serve as the owner and creative lead. Through this platform, I have produced social media content and visual campaigns while gaining valuable experience in video production, branding, and digital storytelling.",
-      urls: ["/videos/Kairos Prod.mp4", "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787495963/Mason_SDE_compressed.mp4", "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787495256/FINAL_SDE_compressed.mp4", "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787496231/IBPVIDEOHIGHLIGHT_compressed.mp4"],
+      urls: ["https://res.cloudinary.com/jdxmsfk2/video/upload/v1787493915/Kairos_Prod.mp4", "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787495963/Mason_SDE_compressed.mp4", "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787495256/FINAL_SDE_compressed.mp4", "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787496231/IBPVIDEOHIGHLIGHT_compressed.mp4"],
     },
     {
       title: "Alex&B Intern",
