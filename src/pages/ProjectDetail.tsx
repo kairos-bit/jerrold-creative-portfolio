@@ -73,19 +73,30 @@ const ProjectDetail = () => {
             <p className="font-body text-lg text-muted-foreground max-w-2xl">{project.description}</p>
           </motion.div>
 
-          {/* Hero image */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="mb-16"
-          >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full rounded-2xl object-cover aspect-video"
-            />
-          </motion.div>
+         {/* Hero image or video */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.7, delay: 0.2 }}
+  className="mb-16"
+>
+  {project.image.endsWith(".mp4") ? (
+    <video
+      src={project.image}
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full rounded-2xl object-cover aspect-video"
+    />
+  ) : (
+    <img
+      src={project.image}
+      alt={project.title}
+      className="w-full rounded-2xl object-cover aspect-video"
+    />
+  )}
+</motion.div>
 
           {/* Details grid */}
           <div className="grid md:grid-cols-3 gap-12 mb-20">
