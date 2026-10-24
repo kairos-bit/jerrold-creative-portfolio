@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
+import WebsitesSection from "./WebsitesSection";
 import { projects } from "@/data/projects";
 
 const FeaturedWork = () => {
@@ -29,6 +30,7 @@ const FeaturedWork = () => {
           {projects.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
           ))}
+          <WebsitesSection index={projects.length} />
         </div>
       </div>
     </section>
