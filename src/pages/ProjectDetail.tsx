@@ -262,6 +262,59 @@ const ProjectDetail = () => {
     </div>
   </motion.div>
 )}
+  {project.websites && project.websites.length > 0 && (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.6 }}
+    className="mb-20"
+  >
+    <h2 className="font-display text-2xl font-bold text-foreground mb-6">
+      Live Websites
+    </h2>
+
+    <div className="grid gap-10 md:grid-cols-2">
+      {project.websites.map((site) => (
+        <a
+          key={site.url}
+          href={site.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="space-y-4 group block"
+        >
+          {/* Browser frame */}
+          <div className="overflow-hidden rounded-2xl bg-card border border-border group-hover:border-primary/40 transition-colors">
+            <div className="flex items-center gap-2 px-4 h-9 border-b border-border bg-secondary/60">
+              <span className="w-2.5 h-2.5 rounded-full bg-foreground/15" />
+              <span className="w-2.5 h-2.5 rounded-full bg-foreground/15" />
+              <span className="w-2.5 h-2.5 rounded-full bg-foreground/15" />
+              <span className="ml-3 truncate font-body text-xs text-muted-foreground">
+                {site.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+              </span>
+            </div>
+            <img
+              src={site.cover}
+              alt={`${site.title} website homepage`}
+              className="w-full aspect-video object-cover object-top transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+
+          <div>
+            <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+              {site.title}
+            </h3>
+            <p className="font-body text-muted-foreground leading-relaxed whitespace-pre-line">
+              {site.description}
+            </p>
+            <span className="inline-flex items-center gap-1.5 mt-4 px-4 py-2 rounded-full bg-foreground text-background font-body text-sm font-medium group-hover:bg-primary transition-colors duration-300">
+              Visit live site <ArrowUpRight size={16} />
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </motion.div>
+)}
  {selectedGallery && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-6">
     <div className="relative w-full max-w-6xl max-h-[90vh] overflow-y-auto rounded-2xl bg-background p-6">

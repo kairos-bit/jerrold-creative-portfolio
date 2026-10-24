@@ -18,6 +18,13 @@ export interface ImageItem {
   images: string[];
   aspect?: "portrait" | "landscape";
 }
+export interface WebsiteItem {
+  title: string;
+  description: string;
+  url: string;
+  cover: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -30,6 +37,7 @@ export interface Project {
   fullDescription: string;
   videos?: VideoItem[];
   gallery?: ImageItem[];
+  websites?: WebsiteItem[];
 }
 export const projects: Project[] = [
   {
@@ -158,6 +166,32 @@ export const projects: Project[] = [
       description: "A branded social media visual designed for clarity and engagement.",
       cover: "/images/shell-1.jpg",
       images: ["/images/shell-1.jpg", "/images/shell-2.jpg", "/images/shell-3.jpg", "/images/shell-4.jpg"],
+    },
+  ],
+},
+  {
+  id: "featured-websites",
+  title: "Featured Websites",
+  category: "Web Design & Development",
+  description: "Live websites designed and built for real brands in Iligan City.",
+  role: "Web Designer & Developer",
+  tools: ["HTML", "CSS", "JavaScript", "GSAP", "Lenis"],
+  year: "2026",
+  image: "/images/websites/cover.webp",
+  fullDescription:
+    "A collection of websites I designed and developed from the ground up, each built around the client's brand, voice and real photography. Every site is fully responsive and uses scroll-driven motion to bring the story to life.",
+  websites: [
+    {
+      title: "Kairos Prod.",
+      description: "Website for my photography and videography studio in Iligan City. A cinematic, motion-led site showcasing weddings, graduations and milestone shoots.",
+      url: "https://kairos-bit.github.io/kairos-prod/",
+      cover: "/images/websites/kairos.webp",
+    },
+    {
+      title: "Groomers on the Go!",
+      description: "Playful, on-brand site for a home service dog and cat grooming business, featuring an interactive before-and-after slider of real client results.",
+      url: "https://groomers-on-the-go.vercel.app",
+      cover: "/images/websites/groomers.webp",
     },
   ],
 },

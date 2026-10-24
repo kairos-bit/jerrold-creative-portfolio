@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Work", href: "work" },
-  { label: "Websites", href: "websites" },
+  { label: "Websites", href: "websites", to: "/project/featured-websites" },
   { label: "About", href: "about" },
   { label: "Skills", href: "skills" },
   { label: "Contact", href: "contact" },
@@ -15,8 +15,15 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
-  const handleNavClick = (sectionId: string) => {
+  const handleNavClick = (sectionId: string, to?: string) => {
     setIsOpen(false);
+
+    // Links that open their own page instead of scrolling
+    if (to) {
+      navigate(to);
+      window.scrollTo(0, 0);
+      return;
+    }
 
     // If already on the homepage, just scroll to the section
     if (window.location.pathname === "/") {
@@ -55,7 +62,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <button
               key={link.label}
-              onClick={() => handleNavClick(link.href)}
+              onClick={() => handleNavClick(link.href, link.to)}
               className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
               {link.label}
@@ -93,7 +100,7 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <button
                   key={link.label}
-                  onClick={() => handleNavClick(link.href)}
+                  onClick={() => handleNavClick(link.href, link.to)}
                   className="font-body text-lg text-foreground text-left"
                 >
                   {link.label}
