@@ -167,6 +167,12 @@ export const projects: Project[] = [
       cover: "/images/shell-1.jpg",
       images: ["/images/shell-1.jpg", "/images/shell-2.jpg", "/images/shell-3.jpg", "/images/shell-4.jpg"],
     },
+    {
+      title: "Groomers on the Go! Social Media Layouts",
+      description: "Playful, on-brand social media posts and a Facebook cover for a home service pet grooming business, including before-and-after features and fun pet facts.",
+      cover: "/images/groomers-1.jpg",
+      images: ["/images/groomers-1.jpg", "/images/groomers-2.jpg", "/images/groomers-3.jpg"],
+    },
   ],
 },
   {
