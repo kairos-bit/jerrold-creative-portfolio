@@ -174,7 +174,9 @@ const ProjectDetail = () => {
     {/* Multiple Videos */}
    <div
   className={`grid gap-6 ${
-    video.urls.length === 1
+    video.vertical
+      ? "grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+      : video.urls.length === 1
       ? "grid-cols-1 justify-items-center"
       : "md:grid-cols-2"
   }`}
@@ -186,7 +188,7 @@ const ProjectDetail = () => {
     <div
       key={i}
       className={`overflow-hidden rounded-2xl bg-card border border-border ${
-        video.urls.length === 1 ? "max-w-3xl w-full" : ""
+        video.urls.length === 1 && !video.vertical ? "max-w-3xl w-full" : ""
       }`}
     >
       <video
@@ -195,7 +197,11 @@ const ProjectDetail = () => {
           if (el) videoRefs.current.push(el);
         }}
         onPlay={() => handlePlay(videoRefs.current.indexOf(document.activeElement as HTMLVideoElement))}
-        className="w-full aspect-video object-cover"
+        // Reels ship with a matching .jpg poster so they don't preload
+        poster={video.vertical ? url.replace(/\.mp4$/, ".jpg") : undefined}
+        preload={video.vertical ? "none" : undefined}
+        playsInline
+        className={`w-full object-cover ${video.vertical ? "aspect-[9/16]" : "aspect-video"}`}
       >
         <source src={url} type="video/mp4" />
       </video>

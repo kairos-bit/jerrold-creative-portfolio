@@ -9,6 +9,7 @@ export interface VideoItem {
   description: string;
   urls: string[];
   thumbnail?: string;
+  vertical?: boolean;
 }
 
 export interface ImageItem {
@@ -58,6 +59,21 @@ export const projects: Project[] = [
       title: "Kairos Prod.",
       description: "Kairos Prod. is my personal production brand where I serve as the owner and creative lead. Through this platform, I have produced social media content and visual campaigns while gaining valuable experience in video production, branding, and digital storytelling.",
       urls: ["https://res.cloudinary.com/jdxmsfk2/video/upload/v1787493915/Kairos_Prod.mp4", "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787495963/Mason_SDE_compressed.mp4", "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787495256/FINAL_SDE_compressed.mp4", "https://res.cloudinary.com/jdxmsfk2/video/upload/v1787496231/IBPVIDEOHIGHLIGHT_compressed.mp4"],
+    },
+    {
+      title: "Short Form Reels",
+      description: "Vertical short-form edits made for Facebook, Instagram and TikTok, including weekly reels for Groomers on the Go!, a Tipler & Co. application edit, and a testimony short for Path of Purpose. Each one is cut for fast hooks, clean pacing and music sync.",
+      vertical: true,
+      urls: [
+        "/reels/groomers-how-our-groomers.mp4",
+        "/reels/groomers-pov-home-grooming.mp4",
+        "/reels/groomers-oct-week1.mp4",
+        "/reels/groomers-grooming-day-mikmik.mp4",
+        "/reels/groomers-oct-week3.mp4",
+        "/reels/groomers-oct-week4.mp4",
+        "/reels/tipler-and-co.mp4",
+        "/reels/path-of-purpose-testimony.mp4",
+      ],
     },
     {
       title: "Alex&B Intern",
