@@ -139,6 +139,13 @@ export const projects: Project[] = [
       aspect: "portrait",
     },
     {
+      title: "Corporate Shoots",
+      description: "Corporate and institutional coverage, from commencement exercises and keynote speakers to job fairs, seminars and honoring nights.",
+      cover: "/images/corporate-1.jpg",
+      images: ["/images/corporate-1.jpg", "/images/corporate-2.jpg", "/images/corporate-3.jpg", "/images/corporate-4.jpg", "/images/corporate-5.jpg", "/images/corporate-6.jpg", "/images/corporate-7.jpg", "/images/corporate-8.jpg", "/images/corporate-9.jpg", "/images/corporate-10.jpg", "/images/corporate-11.jpg", "/images/corporate-12.jpg", "/images/corporate-13.jpg"],
+      aspect: "landscape",
+    },
+    {
       title: "Event Photography",
       description: "Captured candid urban moments with strong framing and contrast.",
       cover: "/images/event-1.jpg",

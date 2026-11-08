@@ -1,7 +1,8 @@
 import { useParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import { projects } from "@/data/projects";
+import { projects, type ImageItem } from "@/data/projects";
+import GalleryModal from "@/components/GalleryModal";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useRef, useState } from "react";
@@ -14,13 +15,7 @@ const ProjectDetail = () => {
   const project = projects.find((p) => p.id === id);
 
   const videoRefs = useRef<HTMLVideoElement[]>([]);
-  const [selectedGallery, setSelectedGallery] = useState<null | {
-  title: string;
-  description: string;
-  cover: string;
-  images: string[];
-  aspect?: "portrait" | "landscape";
-}>(null);
+  const [selectedGallery, setSelectedGallery] = useState<ImageItem | null>(null);
 
   const handlePlay = (currentIndex: number) => {
     videoRefs.current.forEach((video, index) => {
@@ -235,31 +230,36 @@ const ProjectDetail = () => {
       Project Gallery
     </h2>
 
-    <div className="grid gap-10 md:grid-cols-2">
+    {/* Every cover uses the same frame so the grid stays uniform */}
+    <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
       {project.gallery.map((item, index) => (
         <button
           key={index}
           type="button"
           onClick={() => setSelectedGallery(item)}
-          className="text-left space-y-4 group"
+          className="text-left group"
         >
-          <div className="overflow-hidden rounded-2xl bg-card border border-border">
-          <img
-  src={item.cover}
-  alt={item.title}
-  className={`w-full object-cover transition-transform duration-300 group-hover:scale-105 ${
-    item.aspect === "landscape"
-      ? "aspect-video"
-      : "aspect-[4/5]"
-  }`}
-/>
+          <div className="relative overflow-hidden rounded-2xl bg-card aspect-[4/5]">
+            <img
+              src={item.cover}
+              alt={item.title}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-background/85 backdrop-blur font-body text-xs text-foreground">
+              {item.images.length} {item.images.length === 1 ? "photo" : "photos"}
+            </span>
+            <span className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-primary flex items-center justify-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+              <ArrowUpRight size={18} className="text-primary-foreground" />
+            </span>
           </div>
 
-          <div>
-            <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+          <div className="mt-4">
+            <h3 className="font-display text-lg font-semibold text-foreground mb-1">
               {item.title}
             </h3>
-            <p className="font-body text-muted-foreground leading-relaxed whitespace-pre-line">
+            <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-2">
               {item.description}
             </p>
           </div>
@@ -321,43 +321,11 @@ const ProjectDetail = () => {
     </div>
   </motion.div>
 )}
- {selectedGallery && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-6">
-    <div className="relative w-full max-w-6xl max-h-[90vh] overflow-y-auto rounded-2xl bg-background p-6">
-      <button
-        type="button"
-        onClick={() => setSelectedGallery(null)}
-        className="absolute right-4 top-4 rounded-full px-3 py-1 text-sm bg-secondary text-secondary-foreground"
-      >
-        Close
-      </button>
-
-      <div className="mb-8">
-        <h2 className="font-display text-3xl font-bold text-foreground mb-2">
-          {selectedGallery.title}
-        </h2>
-        <p className="font-body text-muted-foreground">
-          {selectedGallery.description}
-        </p>
-      </div>
-
-      <div className="grid gap-6 md:grid-cols-2">
-        {selectedGallery.images.map((image, index) => (
-          <div
-            key={index}
-            className="overflow-hidden rounded-2xl border border-border bg-card"
-          >
-         <img
-  src={image}
-  alt={`${selectedGallery.title} ${index + 1}`}
-  className="w-full h-auto"
-/>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-)}
+          <AnimatePresence>
+            {selectedGallery && (
+              <GalleryModal gallery={selectedGallery} onClose={() => setSelectedGallery(null)} />
+            )}
+          </AnimatePresence>
 
           {/* Next project */}
           <div className="border-t border-border pt-12">
