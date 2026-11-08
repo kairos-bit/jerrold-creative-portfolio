@@ -145,7 +145,7 @@ export const projects: Project[] = [
       description: "Corporate and institutional coverage, from commencement exercises and keynote speakers to job fairs, seminars and honoring nights.",
       cover: "/images/corporate-7.jpg",
       coverPosition: "68% center",
-      images: ["/images/corporate-1.jpg", "/images/corporate-2.jpg", "/images/corporate-3.jpg", "/images/corporate-4.jpg", "/images/corporate-5.jpg", "/images/corporate-6.jpg", "/images/corporate-7.jpg", "/images/corporate-8.jpg", "/images/corporate-9.jpg", "/images/corporate-10.jpg", "/images/corporate-11.jpg", "/images/corporate-12.jpg", "/images/corporate-13.jpg", "/images/corporate-14.jpg", "/images/corporate-15.jpg", "/images/corporate-16.jpg", "/images/corporate-17.jpg"],
+      images: ["/images/corporate-1.jpg", "/images/corporate-2.jpg", "/images/corporate-3.jpg", "/images/corporate-4.jpg", "/images/corporate-5.jpg", "/images/corporate-6.jpg", "/images/corporate-7.jpg", "/images/corporate-8.jpg", "/images/corporate-9.jpg", "/images/corporate-10.jpg", "/images/corporate-11.jpg", "/images/corporate-12.jpg", "/images/corporate-13.jpg", "/images/corporate-14.jpg", "/images/corporate-15.jpg", "/images/corporate-16.jpg", "/images/corporate-17.jpg", "/images/corporate-18.jpg", "/images/corporate-19.jpg", "/images/corporate-20.jpg"],
       aspect: "landscape",
     },
     {
