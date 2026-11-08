@@ -244,6 +244,7 @@ const ProjectDetail = () => {
               src={item.cover}
               alt={item.title}
               loading="lazy"
+              style={{ objectPosition: item.coverPosition }}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
